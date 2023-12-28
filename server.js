@@ -1,7 +1,12 @@
 const express = require('express');
+const colors = require('colors');
 const dotenv = require('dotenv').config(); //dotenv
 const errorHandler = require('./middleware/errorMiddleware');
+const connectDB = require('./config/db')
 const port = process.env.PORT || 2500;
+
+
+connectDB(); //Database connection
 
 //routers
 const paymentRoute = require('./routes/paymentRouters');
