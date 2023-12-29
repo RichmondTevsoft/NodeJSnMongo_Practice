@@ -11,6 +11,7 @@ connectDB(); //Database connection
 //routers
 const paymentRoute = require('./routes/paymentRouters');
 const goalRoute = require('./routes/goalRoutes');
+const userRoute = require('./routes/userRoutes');
 
 
 const app = express();  //initiialize express
@@ -19,6 +20,7 @@ app.use(express.json()); //Middleware to receive json
 app.use(express.urlencoded({extended:false})) //Middleware to receive URL Enconded
  
 app.use('/api/goals', goalRoute);
+app.use('/api/users', userRoute);
 app.use('/api/payments', paymentRoute);
 
 
